@@ -4,6 +4,7 @@ WORKDIR /app
 
 RUN mkdir src
 RUN mkdir bin
+RUN mkdir data
 
 COPY go.mod .
 COPY go.sum .
