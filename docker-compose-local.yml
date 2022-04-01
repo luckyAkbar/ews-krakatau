@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  ews-db:
+    image: postgres:14
+    volumes:
+      - /var/lib/postgresql/ews-db-psql:/var/lib/postgresql/data
+    ports:
+      - 5555:5432
+    environment:
+      POSTGRES_DB: ews
+      POSTGRES_PASSWORD: ews
+      POSTGRES_USER: ews
