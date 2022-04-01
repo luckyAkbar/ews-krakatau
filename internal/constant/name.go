@@ -1,8 +1,13 @@
 package constant
 
-var SERTUNG = "Sertung"
-var RAKATA = "Rakata"
-var ANAK_KRAKATAU = "Gunung Anak Krakatau"
-var PANJANG = "Panjang"
-var PEMATANG = "Pematang"
-var HANURA = "Hanura"
+const SERTUNG = "sertung"
+const RAKATA = "rakata"
+const ANAK_KRAKATAU = "anak-krakatau"
+const PANJANG = "panjang"
+const PEMATANG = "pematang"
+const HANURA = "hanura"
+
+var BUOY_LOCATION []string = []string{SERTUNG, RAKATA}
+var WATER_LEVEL_LOCATION []string = []string{PEMATANG, HANURA}
+var SEISMIC_LOCATION []string = []string{SERTUNG, ANAK_KRAKATAU, PANJANG, RAKATA}
+var WEATHER_LOCATION []string = []string{SERTUNG, RAKATA}
