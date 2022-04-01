@@ -23,3 +23,5 @@ EXPOSE 3333
 WORKDIR /app
 
 RUN rm -r src/
+
+CMD ["./bin/main", "server"]
