@@ -11,3 +11,18 @@ services:
       POSTGRES_DB: ews
       POSTGRES_PASSWORD: ews
       POSTGRES_USER: ews
+    networks:
+      - internal
+  
+  # ews-http-server:
+  #   build: .
+  #   ports:
+  #     - 3333:3333
+  #   depends_on:
+  #     - ews-db
+  #   networks:
+  #     - internal
+
+networks:
+  internal:
+    driver: bridge
