@@ -20,3 +20,9 @@ type WeatherResult struct {
 	Temperature int    `json:"temp"`
 	PlaceName   string `json:"place_name"`
 }
+
+type SeismicResult struct {
+	OK        bool    `json:"ok"`
+	Magnitude float32 `json:"magnitude"`
+	PlaceName string  `json:"place_name"`
+}

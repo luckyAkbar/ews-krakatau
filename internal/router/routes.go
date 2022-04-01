@@ -18,28 +18,7 @@ func Router() *echo.Echo {
 	e.Use(middleware.Logger())
 
 	e.GET("/weather/:locationName", handler.Weather)
-
-	e.GET("/seismic/sertung", func(c echo.Context) error {
-		return c.JSON(http.StatusOK, OK{
-			Message: "oke",
-		})
-	})
-	e.GET("/seismic/anak-krakatau", func(c echo.Context) error {
-		return c.JSON(http.StatusOK, OK{
-			Message: "oke",
-		})
-	})
-	e.GET("/seismic/panjang", func(c echo.Context) error {
-		return c.JSON(http.StatusOK, OK{
-			Message: "oke",
-		})
-	})
-	e.GET("/seismic/rakata", func(c echo.Context) error {
-		return c.JSON(http.StatusOK, OK{
-			Message: "oke",
-		})
-	})
-
+	e.GET("/seismic/:locationName", handler.Seismic)
 	e.GET("/buoy/:locationName", handler.Buoy)
 
 	e.GET("/water-level/pematang", func(c echo.Context) error {

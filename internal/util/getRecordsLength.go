@@ -29,3 +29,15 @@ func GetWeatherRecordsLength(locationName string) (int, error) {
 
 	return num, nil
 }
+
+func GetSeismicRecordsLength(locationName string) (int, error) {
+	var num int
+
+	err := db.DB.Model(&models.Seismic{}).Select("COUNT(*)").Where("place_name = ?", locationName).Scan(&num).Error
+
+	if err != nil {
+		return 0, errors.New("Failed to count seismic records")
+	}
+
+	return num, nil
+}
