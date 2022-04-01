@@ -22,6 +22,9 @@ services:
   #     - ews-db
   #   networks:
   #     - internal
+  #   volumes:
+  #     - ./.env:/app/.env
+  #     - ./data/:/app/data/
 
 networks:
   internal:
