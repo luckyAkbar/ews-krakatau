@@ -2,6 +2,7 @@ package console
 
 import (
 	"ews-krakatau/internal/db"
+	"ews-krakatau/internal/router"
 	"log"
 	"net/http"
 
@@ -22,8 +23,10 @@ func init() {
 func InitServer(cmd *cobra.Command, args []string) {
 	db.Connect()
 
+	r := router.Router()
 	s := http.Server{
-		Addr: ":3333",
+		Addr:    ":3333",
+		Handler: r,
 	}
 
 	log.Println("Server listening on port 3333")
