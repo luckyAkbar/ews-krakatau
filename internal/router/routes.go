@@ -1,6 +1,7 @@
 package router
 
 import (
+	"ews-krakatau/internal/handler"
 	"net/http"
 
 	"github.com/labstack/echo/v4"
@@ -48,16 +49,7 @@ func Router() *echo.Echo {
 		})
 	})
 
-	e.GET("/buoy/sertung", func(c echo.Context) error {
-		return c.JSON(http.StatusOK, OK{
-			Message: "oke",
-		})
-	})
-	e.GET("/buoy/rakata", func(c echo.Context) error {
-		return c.JSON(http.StatusOK, OK{
-			Message: "oke",
-		})
-	})
+	e.GET("/buoy/:locationName", handler.Buoy)
 
 	e.GET("/water-level/pematang", func(c echo.Context) error {
 		return c.JSON(http.StatusOK, OK{
