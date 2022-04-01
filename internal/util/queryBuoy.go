@@ -4,14 +4,10 @@ import (
 	"errors"
 	"ews-krakatau/internal/db"
 	"ews-krakatau/internal/models"
-	"fmt"
 )
 
 func GetBuoySensorData(index int, locationName string) (models.Buoy, error) {
 	buoyData := models.Buoy{}
-
-	fmt.Println(locationName)
-	fmt.Println(index)
 
 	err := db.DB.Model(&models.Buoy{}).
 		Limit(1).
