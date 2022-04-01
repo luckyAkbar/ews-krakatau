@@ -17,16 +17,7 @@ func Router() *echo.Echo {
 
 	e.Use(middleware.Logger())
 
-	e.GET("/weather/sertung", func(c echo.Context) error {
-		return c.JSON(http.StatusOK, OK{
-			Message: "oke",
-		})
-	})
-	e.GET("/weather/rakata", func(c echo.Context) error {
-		return c.JSON(http.StatusOK, OK{
-			Message: "oke",
-		})
-	})
+	e.GET("/weather/:locationName", handler.Weather)
 
 	e.GET("/seismic/sertung", func(c echo.Context) error {
 		return c.JSON(http.StatusOK, OK{

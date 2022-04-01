@@ -11,3 +11,12 @@ type BuoyResult struct {
 	Latitude   string `json:"lat"`
 	Longitude  string `json:"long"`
 }
+
+type WeatherResult struct {
+	OK          bool   `json:"ok"`
+	WindSpeed   int    `json:"wind_speed"`
+	WindDir     int    `json:"wind_direction"`
+	Humidity    int    `json:"humidity"`
+	Temperature int    `json:"temp"`
+	PlaceName   string `json:"place_name"`
+}
