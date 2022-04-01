@@ -41,3 +41,15 @@ func GetSeismicRecordsLength(locationName string) (int, error) {
 
 	return num, nil
 }
+
+func GetWaterLevelRecordsLength(locationName string) (int, error) {
+	var num int
+
+	err := db.DB.Model(&models.WaterLevel{}).Select("COUNT(*)").Where("place_name = ?", locationName).Scan(&num).Error
+
+	if err != nil {
+		return 0, errors.New("Failed to count water level records")
+	}
+
+	return num, nil
+}

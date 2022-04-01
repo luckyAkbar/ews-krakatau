@@ -26,3 +26,11 @@ type SeismicResult struct {
 	Magnitude float32 `json:"magnitude"`
 	PlaceName string  `json:"place_name"`
 }
+
+type WaterLevelResult struct {
+	OK          bool   `json:"ok"`
+	LevRAD      int    `json:"lev_rad"`
+	SensorTemp  int    `json:"sensor_temp"`
+	Temperature int    `json:"temperature"`
+	PlaceName   string `json:"place_name"`
+}
